@@ -9,7 +9,7 @@ module MixinComment
 
     def call
       rdoc = RDoc::RDoc.new
-      rdoc.document(["--dry-run"] + @dirs)
+      rdoc.document(['--dry-run'] + @dirs)
 
       rdoc.generator.classes.each do |mod|
         next unless mod.module?

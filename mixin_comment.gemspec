@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = MixinComment::VERSION
   spec.authors       = ["Yoshikazu Kaneta"]
   spec.email         = ["kaneta@sitebridge.co.jp"]
-  spec.summary       = %q{Mixin comment and verification for roughly designed module}
-  spec.description   = %q{Mixin comment and verification for roughly designed module}
+  spec.summary       = %q{Verification of comments for roughly designed mixin module}
+  spec.description   = %q{Verification of comments for roughly designed mixin module}
   spec.homepage      = "https://github.com/kanety/mixin_comment"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

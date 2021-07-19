@@ -1,6 +1,6 @@
 # MixinComment
 
-Mixin comment and verification for roughly designed module.
+Verification of comments for roughly designed mixin module.
 
 ## Dependencies
 
@@ -21,8 +21,8 @@ Then execute:
 
 ## Usage
 
-Add comments abount mixin module preceding to the module definition.
-Its format is same as the label of rdoc as follows:
+Add comments with specific labels preceding to the module definition.
+For example:
 
 ```ruby
 # [required methods] method, method2
@@ -44,12 +44,12 @@ class Item
 end
 ```
 
-`[required methods]` means that the class `Item` which includes module `A` should have two methods named `method` and `method2`.
+The label `[required methods]` means that the class `Item` which includes the module `A` should have two methods named `method` and `method2`.
 You can verify validity of classes as follows:
 
 ```ruby
-# speficy your .rb files in glob format
-results = MixinComment.verify('**/*.rb')
+# speficy your directory which contains *.rb files
+results = MixinComment.verify('app')
 
 results[0].module_name
 #=> "A"
@@ -60,24 +60,24 @@ results[0].errors
 ```
 
 In this example the class `Item` does not have `method2`,
-so the `verify` method returns `[[Item, "method2"]]` as errors.
+so `[[Item, "method2"]]` is returned as an error.
 
 ### Supported labels
 
-This gem supports following labels:
+Following labels are available:
 
 * `required methods`: verify existence of instance methods in classes.
 * `required class methods`: verify existence of class methods in classes.
 * `required override methods`: verify existence of override methods in classes.
 
-This gem also supports special labels for ActiveRecord models:
+Special labels for ActiveRecord models are also available:
 
 * `required columns`: verify existence of columns in ActiveRecord models.
 * `required associations`: verify existence of associations in ActiveRecord models.
 
 ### For Rails
 
-Rake task is available for rails application.
+In case you develops rails application, rake task is available:
 
 ```shell-session
 $ bundle exec rake mixin_comment:verify

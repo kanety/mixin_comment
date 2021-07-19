@@ -23,5 +23,11 @@ module MixinComment
     def has_errors?
       @errors.present?
     end
+
+    def show_errors
+      errors.each do |klass, attr|
+        puts "#{klass}##{attr} is #{label.singularize} by #{module_name}"
+      end
+    end
   end
 end
