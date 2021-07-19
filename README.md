@@ -48,6 +48,8 @@ The label `[required methods]` means that the class `Item` which includes the mo
 You can verify validity of classes as follows:
 
 ```ruby
+require 'mixin_comment'
+
 # speficy your directory which contains *.rb files
 results = MixinComment.verify('app')
 
