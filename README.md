@@ -79,6 +79,11 @@ Special labels for ActiveRecord models are also available:
 
 In case you develops rails application, rake task is available:
 
+```ruby
+# load only rake task
+gem 'mixin_comment', require: 'mixin_comment/railtie'
+```
+
 ```shell-session
 $ bundle exec rake mixin_comment:verify
 Item#method2 is required method by A
