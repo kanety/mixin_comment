@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 namespace :mixin_comment do
   desc 'Verify mixin comments'
   task :verify => :environment do
